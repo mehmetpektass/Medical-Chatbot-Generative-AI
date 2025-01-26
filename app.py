@@ -14,6 +14,7 @@ app = Flask(__name__)
 
 load_dotenv()
 
+# Retrieve Pinecone and OpenAI API keys
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
@@ -23,6 +24,7 @@ os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 embeddings = download_hugging_face_embeddings()
 
 
+# Initialize Pinecone vector store with an existing index
 index_name = "medicalchatbot"
 
 docsearch = PineconeVectorStore.from_existing_index(
@@ -31,6 +33,7 @@ docsearch = PineconeVectorStore.from_existing_index(
 )
 
 
+# Set up the retriever and Initialize OpenAI's
 retriever = docsearch.as_retriever(search_type = "similarity", kwargs= {"k": 3})
 
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.4 , max_tokens=500)
@@ -41,10 +44,13 @@ prompt = ChatPromptTemplate(
     ]
 )
 
+
+# Create the question-answering chain that combines the model and prompt
 question_answer_chain = create_stuff_documents_chain(llm , prompt)
 rag_chain = create_retrieval_chain(retriever , question_answer_chain)
 
 
+# Define the routes to render the chat page
 @app.route("/")
 def index():
     return render_template("chat.html")
