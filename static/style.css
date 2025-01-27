@@ -257,84 +257,91 @@ html {
 
 /* Medium screens (max-width: 768px) */
 @media (max-width: 768px) {
-  .card {
-    height: 450px;
-    margin: 10px;
+    .card {
+      height: 95vh; /* Let the height adjust to content */
+      margin: 10px;
+      padding: 10px; /* Optional padding for better spacing */
+    }
+  
+    .contacts_body,
+    .msg_card_body {
+      padding: 1rem; /* Ensure enough padding for mobile */
+    }
+  
+    .search,
+    .type_msg {
+      height: auto;
+      font-size: 1rem; /* Use relative font sizes */
+      padding: 8px;
+    }
+  
+    .user_info span {
+      font-size: 1rem; /* Adjust font size to be readable */
+    }
+  
+    .user_info p {
+      font-size: 0.875rem; /* Slightly larger than 8px for better readability */
+    }
+  
+    .msg_cotainer,
+    .msg_cotainer_send {
+      font-size: 0.95rem;
+      padding: 10px; /* Improve spacing for messages */
+    }
+  
+    .msg_time,
+    .msg_time_send {
+      font-size: 0.75rem; /* Slightly larger for visibility */
+    }
   }
-
-  .contacts_body,
-  .msg_card_body {
-    padding: 0.5rem;
+  
+  /* Small screens (max-width: 576px) */
+  @media (max-width: 576px) {
+    .card {
+      width: 90%; /* Use a percentage to make it adapt to the viewport */
+      margin: 0 auto; /* Center the card */
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add some elevation */
+    }
+  
+    .contacts_body,
+    .msg_card_body {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+  
+    .search,
+    .type_msg {
+      height: auto;
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    .user_img,
+    .user_img_msg {
+      height: 40px;
+      width: 40px;
+    }
+  
+    .img_cont,
+    .img_cont_msg {
+      height: 40px;
+      width: 40px;
+    }
+  
+    .msg_cotainer,
+    .msg_cotainer_send {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  
+    .msg_time,
+    .msg_time_send {
+      font-size: 0.75rem;
+    }
+  
+    .contacts li {
+      margin-bottom: 8px;
+    }
   }
-
-  .search,
-  .type_msg {
-    height: 50px !important;
-    font-size: 14px;
-  }
-
-  .user_info span {
-    font-size: 16px;
-  }
-
-  .user_info p {
-    font-size: 8px;
-  }
-
-  .msg_cotainer,
-  .msg_cotainer_send {
-    font-size: 14px;
-  }
-
-  .msg_time,
-  .msg_time_send {
-    font-size: 8px;
-  }
-}
-
-/* Small screens (max-width: 576px) */
-@media (max-width: 576px) {
-  .card {
-    height: 400px;
-    width: 100%;
-    margin: 5px;
-  }
-
-  .contacts_body,
-  .msg_card_body {
-    font-size: 12px;
-  }
-
-  .search,
-  .type_msg {
-    height: 45px !important;
-    font-size: 12px;
-  }
-
-  .user_img,
-  .user_img_msg {
-    height: 50px;
-    width: 50px;
-  }
-
-  .img_cont,
-  .img_cont_msg {
-    height: 50px;
-    width: 50px;
-  }
-
-  .msg_cotainer,
-  .msg_cotainer_send {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .msg_time,
-  .msg_time_send {
-    font-size: 8px;
-  }
-
-  .contacts li {
-    margin-bottom: 10px !important;
-  }
-}
+  
