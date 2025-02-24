@@ -36,7 +36,7 @@ This project is a robust question-answering system designed to process PDF docum
 
 ## Installation & Setup
 ```bash
-git clone https://github.com/mehmetpektass/Medical-Chatbot-Generative-AI
+git clone https://github.com/mehmetpektass/Medical-Chatbot-Generative-AI.git
 cd Medical_Chatbot_Generative_AI
 
 ```
