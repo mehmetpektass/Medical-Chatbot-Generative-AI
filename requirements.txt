@@ -1,12 +1,13 @@
 sentence-transformers
-langchain
+langchain>=0.2.0
 flask
 pypdf
 python-dotenv
-pinecone-client[grpc]>=3.0.0
+pinecone>=3.0.0  # Critical: Use "pinecone" not "pinecone-client"
 langchain_community
 langchain_openai
 langchain_experimental
 langchain_core
 setuptools
 gunicorn
+langchain-huggingface  # For updated embeddings
