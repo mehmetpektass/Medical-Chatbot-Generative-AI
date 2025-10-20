@@ -8,7 +8,6 @@ langchain-experimental>=0.0.50
 langchain-huggingface>=0.0.4
 langchain-text-splitters>=0.0.1
 pinecone-client[grpc]>=3.0.0
-sentence-transformers>=2.2.0
 pypdf>=3.0.0
 python-dotenv>=1.0.0
 setuptools>=65.0.0
